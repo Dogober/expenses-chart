@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+
+:root{
+    /*Colors*/
+        /*Primary*/
+
+        --soft-red: hsl(10, 79%, 65%);
+        --cyan: hsl(186, 34%, 60%);
+        
+        /*Neutral*/
+
+        --dark-brown: hsl(25, 47%, 15%);
+        --medium-brown: hsl(28, 10%, 53%);
+        --cream: hsl(27, 66%, 92%);
+        --very-pale-orange: hsl(33, 100%, 98%);
+
+    /*Typography*/
+
+    --family: 'DM Sans', sans-serif;
+    --size-base: 18px;
+    --weight-normal: 400;
+    --weight-bold: 800;
+
+    /*Bprder*/
+
+    --border-r-normal: 1rem
+}
+
+body{
+    margin: 0;
+    background-color: var(--cream);
+    font-size: var(--size-base);
+    font-family: var(--family);
+}
+
+.expenses-chart{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.expenses-chart__content{
+    width: 375px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 5rem 1.5rem;
+}
+
+.expenses-chart__chart{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.day-amount-container{
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    align-items: center;
+}
+
+.day-amount-title{
+    transition-duration: 400ms;
+    font-size: 0.7rem;
+    font-weight: var(--weight-bold);
+    background-color: var(--dark-brown);
+    color: var(--very-pale-orange);
+    border-radius: 0.2rem;
+    padding: 0.25rem;
+    opacity: 0;
+}
+
+.day-amount{
+    transition-duration: 250ms;
+    width: 32.5px;
+    border-radius: 0.2rem;
+    cursor: pointer;
+}
+
+.day-amount:hover{
+    opacity: 0.7;
+}
+
+.day-amount-container:hover .day-amount-title{
+    opacity: 1
+}
+
+.expenses-chart__balance-data{
+    display: grid;
+    row-gap: 0.3rem;
+    color: var(--very-pale-orange);
+    grid-template-columns: repeat(2, minmax(0, auto));
+    grid-template-rows: repeat(2, minmax(0, auto));
+    padding: 1.2rem;
+    background-color: var(--soft-red);
+    border-radius: var(--border-r-normal);
+}
+
+.month{
+    background-color: var(--very-pale-orange);
+    border-radius: 0;
+    color: var(--medium-brown);
+    grid-template-rows: repeat(3, minmax(0, auto));
+    padding: 0;
+    row-gap: 0;
+}
+
+.total{
+    margin-bottom: 0.2rem;
+}
+
+.per-month{
+    font-size: 1.8rem;
+    color: var(--dark-brown);
+    grid-column-start: 1;
+    grid-row-start: 2;
+    grid-row-end: 4;
+    align-self: flex-end;
+}
+
+.balance-progress{
+    color: var(--dark-brown);
+    font-weight: var(--weight-bold);
+    grid-column-start: 2;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    justify-self: end;
+    align-self: flex-end;
+}
+
+.last-month{
+    grid-column-start: 2;
+    grid-row-start: 3;
+    grid-row-end: 4;
+    justify-self: end;
+    align-self: flex-start;
+}
+
+.expenses-chart__logo {
+    width: 2.8rem;
+    grid-column-start: 2;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    justify-self: end;
+    align-self: center;
+}
+
+.expenses-chart__chart-container{
+    padding: 1.5rem;
+    background-color: var(--very-pale-orange);
+    border-radius: var(--border-r-normal);
+    color: var(--medium-brown);
+}
+
+.expenses-chart__chart{
+    margin: 1.3rem 0;
+    padding-bottom: 1.3rem;
+    border-bottom: solid 1px var(--cream);
+}
+
+.expenses-chart__title{
+    font-size: 0.7rem;
+}
+.expenses-chart__title--spending{
+    font-weight: var(--weight-bold);
+    color: var(--dark-brown);
+}
+
+.expenses-chart__balance{
+    font-weight: var(--weight-bold);
+}
